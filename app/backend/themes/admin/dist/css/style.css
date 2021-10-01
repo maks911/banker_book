@@ -1,0 +1,102 @@
+body {
+    font-size: 15px;
+}
+.pl-table {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.pl-table .row {
+    margin: 5px 0;
+    padding: 0 20px;
+    align-items: center;
+}
+.pl-table .col {
+    padding: 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all .5s ease-in;
+}
+.pl-table .col:hover {
+    white-space: inherit;
+    text-overflow: inherit;
+}
+.pl-table .pl-thead {
+    color: #979797;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+.pl-table .pl-thead.tall {
+    background-color: #263338;
+    margin: 0;
+    padding: 5px 0;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: initial;
+}
+.pl-table .pl-thead.tall .col {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    align-self: stretch;
+}
+.pl-table .pl-thead.tall .col:last-child {
+    border: none;
+}
+.pl-table .pl-thead.tall .col .large {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.pl-table .pl-tbody {
+    font-size: 1.3rem;
+}
+.pl-table .pl-tbody .row {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: #ffffff;
+    color: #979797;
+    font-size: .8rem;
+}
+.pl-table .pl-tbody.scroll {
+    max-height: 100px;
+    overflow-x: scroll;
+}
+.sidebar-search-results .list-group {
+    top: -14px;
+}
+@media screen and (max-width: 767px) {
+    .wrapper {
+        width: 100%;
+    }
+    .pl-table {
+        margin: 0;
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .pl-table__wrapper {
+        width: max-content;
+    }
+    .pl-table .col {
+        min-width: 80px;
+    }
+    .pl-table .pl-thead {
+        font-size: .85rem;
+        line-height: 1.35rem;
+    }
+    .pl-table .pl-thead.tall .col {
+        text-align: left;
+    }
+    .pl-table .pl-tbody .row {
+        font-size: .7rem;
+    }
+    .pl-table .pl-thead.tall .col .large {
+        font-size: 1.2rem;
+    }
+    .pl-table .row {
+        flex-wrap: nowrap;
+    }
+    .jumbotron .display-4 {
+        font-size: 2rem;
+        text-align: left;
+    }
+}
