@@ -1,6 +1,21 @@
 body {
     font-size: 15px;
 }
+.site-index .form-horizontal {
+    padding: 2rem;
+    max-width: 28rem;
+}
+.tag {
+    background-color: green;
+    color: #FFFFFF;
+    padding: 7px 15px;
+    width: max-content;
+}
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .pl-table {
     max-width: 800px;
     margin: 0 auto;
@@ -64,6 +79,23 @@ body {
 .sidebar-search-results .list-group {
     top: -14px;
 }
+.col-action {
+    text-align: right;
+}
+.add__success {
+    max-width: 800px;
+    margin-bottom: 50px;
+    background-color: green;
+    color: #FFFFFF;
+    padding: 30px;
+}
+.input-group.error {
+    border-radius: 5px;
+    border: 1px solid red;
+}
+.jumbotron {
+    padding: 4rem 2rem 0 1rem;
+}
 @media screen and (max-width: 767px) {
     .wrapper {
         width: 100%;
@@ -98,5 +130,13 @@ body {
     .jumbotron .display-4 {
         font-size: 2rem;
         text-align: left;
+    }
+    .form-horizontal {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    .add__success {
+        max-width: 100%;
+        margin-bottom: 25px;
     }
 }

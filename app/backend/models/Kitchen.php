@@ -10,6 +10,13 @@ use yii\db\ActiveRecord;
 class Kitchen extends ActiveRecord
 {
 
+    public function rules()
+    {
+        return [
+            [['kitchen_name'], 'required'],
+        ];
+    }
+
     public static function tableName() { return 'kitchens'; }
 
 
@@ -31,6 +38,10 @@ class Kitchen extends ActiveRecord
     public function get($email)
     {
 
+    }
+
+    public function getTags() {
+        return $this->hasMany(Tag::class, ['kitchen_id' => 'id']);
     }
 
     /**
