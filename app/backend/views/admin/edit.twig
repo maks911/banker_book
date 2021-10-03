@@ -1,0 +1,29 @@
+{{ set(this, 'title', 'BankerBook test App | Edit Kitchen') }}
+<div class="site-index">
+    {% set form = active_form_begin({
+        'id' : 'edit-form',
+        'options' : {'class' : 'form-horizontal'},
+        'enableClientScript': false
+    }) %}
+    <div class="form-group">
+        {{ form.field(model, 'kitchen_name').textInput({
+            'class' : 'form-control',
+            'placeholder' : 'Change Name'
+        }).label(false) | raw}}
+    </div>
+    <div class="form-group">
+        {{ form.field(model, 'value').textInput({
+            'id' : 'tag-input',
+            'name' : 'Tag[value]',
+            'class' : 'form-control tag-input',
+            'placeholder' : 'Edit Tags',
+            'value' : tagsValue
+        }).label('Change Tags:')
+        | raw
+        }}
+    </div>
+    <div class="form-group">
+        <input type="button" value="Update Kitchen" class="btn js-submit btn-primary"/>
+    </div>
+    {{ active_form_end() }}
+</div>

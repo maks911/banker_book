@@ -1,0 +1,30 @@
+{{ set(this, 'title', 'BankerBook test App | Add Kithcen') }}
+<div class="site-index">
+    <h1>Add New Kitchen Here</h1>
+    {% set form = active_form_begin({
+        'id' : 'add-form',
+        'options' : {
+            'class' : 'form-horizontal',
+            'enctype' : 'miltipart/form-data'
+        },
+        'enableClientScript': false
+    }) %}
+    <div class="form-group">
+        {{ form.field(model.kitchen, 'kitchen_name').textInput({
+            'class' : 'form-control',
+            'placeholder' : 'Enter Name'
+        }).label(false) | raw}}
+    </div>
+    <div class="form-group">
+        {{ form.field(modelTag, 'value').textInput({
+            'id' : 'tag-input',
+            'class' : 'form-control tag-input'
+        }).label('Enter Tags')
+        | raw
+        }}
+    </div>
+    <div class="input-group-append">
+        <input type="button" value="Add Kitchen" class="btn js-submit btn-primary"/>
+    </div>
+    {{ active_form_end() }}
+</div>

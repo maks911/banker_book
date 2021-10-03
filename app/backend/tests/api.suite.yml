@@ -1,0 +1,12 @@
+suite_namespace: backend\tests\api
+actor: ApiTester
+modules:
+    enabled:
+        - REST:
+              url: http://localhost:8082/index-test.php/
+              depends: Yii2
+              part: JSON
+              configFile: 'config/test.php'
+
+    config:
+        - Yii2
