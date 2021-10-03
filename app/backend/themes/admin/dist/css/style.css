@@ -76,6 +76,9 @@ body {
     max-height: 100px;
     overflow-x: scroll;
 }
+.sidebar-search-results {
+    display: block;
+}
 .sidebar-search-results .list-group {
     top: -14px;
 }

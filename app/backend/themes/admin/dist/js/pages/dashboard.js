@@ -2,6 +2,11 @@ jQuery(document).ready(function($) {
     let searchTimeout = null;
     let tagsSelector = 'tag-input';
 
+    setTimeout(function() {
+        $('.preloader').css({'height' : 0});
+        $('.preloader img').remove();
+    }, 200);
+
     if ($(`#${tagsSelector}`).length > 0) {
         let tagInput = new TagsInput({
             selector: 'tag-input',
@@ -9,7 +14,6 @@ jQuery(document).ready(function($) {
         let $tagInput = $('#tag-input');
         if ($tagInput.val().length > 0) {
             let data = $tagInput.val().split(',');
-            console.log(data);
             tagInput.addData(data);
         }
     }
