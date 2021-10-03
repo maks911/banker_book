@@ -5,7 +5,6 @@ use backend\models\Kitchen;
 use backend\models\Tag;
 use Yii;
 use yii\base\Model;
-use yii\widgets\ActiveForm;
 
 class KitchenForm extends Model
 {
@@ -18,25 +17,6 @@ class KitchenForm extends Model
             [['Kitchen'], 'required'],
             [['Tags'], 'safe'],
         ];
-    }
-
-    /**
-     * @param array $tags
-     * @return bool
-     */
-    public function saveTags(array $tags): bool
-    {
-        $existTags = $this->tags;
-        foreach ($existTags as $tag) {
-            $tag->delete();
-        }
-        foreach ($tags as $tag) {
-            $modelTag = new Tag();
-            $modelTag->value = $tag;
-            $modelTag->kitchen_id = $this->getKitchen()->id;
-            $modelTag->save();
-        }
-        return true;
     }
 
 
@@ -53,9 +33,9 @@ class KitchenForm extends Model
     }
 
     /**
-     * @return Kitchen|null
+     * @return Kitchen
      */
-    public function getKitchen(): ?Kitchen
+    public function getKitchen(): Kitchen
     {
         return $this->_kitchen;
     }
@@ -92,6 +72,25 @@ class KitchenForm extends Model
             return false;
         }
         $transaction->commit();
+        return true;
+    }
+
+    /**
+     * @param array $tags
+     * @return bool
+     */
+    public function saveTags(array $tags): bool
+    {
+        $existTags = $this->tags;
+        foreach ($existTags as $tag) {
+            $tag->delete();
+        }
+        foreach ($tags as $tag) {
+            $modelTag = new Tag();
+            $modelTag->value = $tag;
+            $modelTag->kitchen_id = $this->getKitchen()->id;
+            $modelTag->save();
+        }
         return true;
     }
 }
